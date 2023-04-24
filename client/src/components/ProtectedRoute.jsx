@@ -6,7 +6,7 @@ import StartingLoader from './startingLoader';
 const ProtectedRoute = () => {
     const {isLoading, isAuthenticated } = useAuth0();
     if(isLoading) return (<StartingLoader />);
-    return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+    return isAuthenticated ? <Outlet /> : <Navigate to="/" />;
 }
 
 export default ProtectedRoute;
