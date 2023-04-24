@@ -6,7 +6,8 @@ import { useStateContext } from '../context';
 import { CountBox, CustomButton, Loader } from '../components';
 import { calculateBarPercentage, daysLeft } from '../utils';
 import { thirdweb } from '../assets';
-
+import Navbar from '../components/Navbar';
+import Sidebar from '../components/Sidebar';
 const CampaignDetails = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
@@ -38,9 +39,17 @@ const CampaignDetails = () => {
   }
 
   return (
-    <div>
+    <div className="relative sm:-8 p-4 bg-[#13131a] min-h-screen flex flex-row">
+    
+      
       {isLoading && <Loader />}
+      
+      <div className="sm:flex hidden mr-10 relative">
+        <Sidebar />
+      </div>
 
+      <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
+        <Navbar />
       <div className="w-full flex md:flex-row flex-col mt-10 gap-[30px]">
         <div className="flex-1 flex-col">
           <img src={state.image} alt="campaign" className="w-full h-[410px] object-cover rounded-xl"/>
@@ -129,7 +138,8 @@ const CampaignDetails = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      </div>
   )
 }
 
