@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { DisplayCampaigns } from '../components';
+import { DisplayCampaigns, Sidebar, Navbar } from '../components';
 import { useStateContext } from '../context'
 
 const Profile = () => {
@@ -21,11 +21,21 @@ const Profile = () => {
   }, [address, contract]);
 
   return (
-    <DisplayCampaigns 
-      title="All Campaigns"
-      isLoading={isLoading}
-      campaigns={campaigns}
-    />
+     <>
+      <div className=" mr-10 ">
+        <Sidebar />
+      </div>
+
+      <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
+        <Navbar />
+
+        <DisplayCampaigns
+          title="All Campaigns"
+          isLoading={isLoading}
+          campaigns={campaigns}
+        />
+      </div>
+    </>
   )
 }
 
