@@ -4,12 +4,12 @@ export const navlinks = [
   {
     name: 'dashboard',
     imgUrl: dashboard,
-    link: '/',
+    link: '/home',
   },
   {
     name: 'campaign',
     imgUrl: createCampaign,
-    link: '/create-campaign',
+    link: '/home/create-campaign',
   },
   {
     name: 'payment',

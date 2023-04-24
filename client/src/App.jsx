@@ -20,7 +20,7 @@ const App = () => {
        
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/allcampaigns" element={<AllCampaigns />} />
-          <Route exact path="/create-campaign" element={<CreateCampaign />} />
+          <Route exact path="/home/create-campaign" element={<CreateCampaign />} />
           <Route
             exact
             path="/campaign-details/:id"
