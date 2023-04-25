@@ -14,6 +14,13 @@ import loader from './loader.svg';
 import thirdweb from './thirdweb.png';
 import github from './github.png'
 import homeIcon from './homeIcon.png';
+import surveyIcon from './surveyIcon.png';
+import image2 from './image2.png';
+import image3 from "./image3.png";
+import image4 from "./image4.png";
+import image5 from "./image5.png";
+
+
 
 
 export {
@@ -32,5 +39,10 @@ export {
   loader,
   thirdweb,
   github,
-  homeIcon
+  homeIcon,
+  surveyIcon,
+  image2,
+  image3, 
+  image4,
+  image5
 };

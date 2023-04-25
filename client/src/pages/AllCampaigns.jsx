@@ -30,7 +30,7 @@ const Profile = () => {
         <Navbar />
 
         <DisplayCampaigns
-          title="All Campaigns"
+          title="Your Campaigns"
           isLoading={isLoading}
           campaigns={campaigns}
         />

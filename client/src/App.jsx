@@ -6,6 +6,7 @@ import {
   Home,
   AllCampaigns,
   LoginPage,
+  AllSurveys,
   LandingPage,
 } from "./pages";
 import StartingLoader from "./components/startingLoader";
@@ -26,7 +27,9 @@ const App = () => {
         <Route exact path="/allcampaigns" element={<ProtectedRoute />}>
           <Route exact path="/allcampaigns" element={<AllCampaigns />} />
         </Route>
-
+        <Route exact path="/allsurveys" element={<ProtectedRoute />}>
+          <Route exact path="/allsurveys" element={<AllSurveys />} />
+        </Route>
         <Route exact path="/create-campaign" element={<ProtectedRoute />}>
           <Route exact path="/create-campaign" element={<CreateCampaign />} />
         </Route>
