@@ -13,6 +13,7 @@ import money from './money.svg';
 import loader from './loader.svg';
 import thirdweb from './thirdweb.png';
 import github from './github.png'
+import homeIcon from './homeIcon.png';
 
 
 export {
@@ -31,4 +32,5 @@ export {
   loader,
   thirdweb,
   github,
+  homeIcon
 };

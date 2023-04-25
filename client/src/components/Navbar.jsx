@@ -115,10 +115,10 @@ const Navbar = () => {
           anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
           <MenuItem onClick={handleClose}>
-            <AccountCircleIcon color="disabled" sx={{ fontSize: 35 }} className='mr-1' /> {user?.name}
+            <AccountCircleIcon color="disabled" sx={{ fontSize: 35 }} className='mr-1 font-epilogue text-[#808191]' /> {user?.name}
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <MailIcon color="disabled" sx={{ fontSize: 35 }} className='mr-1' /> {user?.email}
+            <MailIcon color="disabled" sx={{ fontSize: 35 }} className='mr-1 font-epilogue' /> {user?.email}
           </MenuItem>
           <Divider />
           <MenuItem onClick={logout}>
