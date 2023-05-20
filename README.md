@@ -76,8 +76,5 @@ git push origin branch-name
 * __Star this repository__ if you had fun!
 
 
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
-
-
+## License
+By contributing, you agree that your contributions will be licensed under its [MIT License.](https://choosealicense.com/licenses/mit/)
