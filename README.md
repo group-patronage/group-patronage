@@ -48,12 +48,12 @@ yarn release
 ✨Star it
 :fork_and_knife:Fork it and Contribute to it <3
 
-## Getting started
+## Contributing🌱
 * Fork this repository (Click the Fork button in the top right of this page, click your Profile Image)
 * Clone your fork down to your local machine
 
 ```markdown
-https://github.com/LakshaySK106/Algorithms.git
+https://github.com/group-patronage/group-patronage.git
 ```
 
 * Create a branch
@@ -75,29 +75,6 @@ git push origin branch-name
 * Wait for your PR review and merge approval!
 * __Star this repository__ if you had fun!
 
-## Contributing🌱
-
-```markdown
-Before creating a PR or issue, please do the following:
-Check the [Contribution](CONTRIBUTING.md) Guide.<br>
-```
-
-
-## Contributors
-
-<table>
-	<tr>
-		 <td>
-			<a href="https://github.com/LakshaySK106/Algorithms/graphs/contributors">
-				<img src="https://contributors-img.web.app/image?repo=LakshaySK106/Algorithms" />
-			</a>
-		</td>
-	</tr>
-</table>
-<!-- 
-<a href = "https://github.com/LakshaySK106/Algorithms/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = LakshaySK106/Algorithms"/>
-</a> -->
 
 ## Join our Discord!
 
