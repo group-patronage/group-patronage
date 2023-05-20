@@ -42,13 +42,10 @@ npm run release
 yarn release
 ```
 
-
-
-## Data Structures and Algorithms Repository
+## Contributing🌱
 ✨Star it
 :fork_and_knife:Fork it and Contribute to it <3
 
-## Contributing🌱
 * Fork this repository (Click the Fork button in the top right of this page, click your Profile Image)
 * Clone your fork down to your local machine
 
