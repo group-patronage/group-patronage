@@ -31,7 +31,7 @@ contract CrowdFunding {
         Campaign storage campaign = campaigns[numberOfCampaigns];
 
         require(
-            campaign.deadline < block.timestamp,
+            block.timestamp < _deadline,
             'The deadline should be a date in the future.'
         );
 
@@ -47,21 +47,26 @@ contract CrowdFunding {
 
         return numberOfCampaigns - 1;
     }
+    
+    
+function donateToCampaign(uint256 _id) public payable {
+    uint256 amount = msg.value;
 
-    function donateToCampaign(uint256 _id) public payable {
-        uint256 amount = msg.value;
+    Campaign storage campaign = campaigns[_id];
 
-        Campaign storage campaign = campaigns[_id];
+    campaign.donators.push(msg.sender);
+    campaign.donations.push(amount);
 
-        campaign.donators.push(msg.sender);
-        campaign.donations.push(amount);
+    if (amount > 0) {
+        uint256 previousAmountCollected = campaign.amountCollected;
+        campaign.amountCollected = previousAmountCollected + amount;
 
         (bool sent, ) = payable(campaign.owner).call{value: amount}('');
+        require(sent, "Donation transfer failed");
 
-        if (sent) {
-            campaign.amountCollected = campaign.amountCollected + amount;
-        }
+        // Perform additional state changes or emit events here
     }
+}   
 
     function getDonators(
         uint256 _id
