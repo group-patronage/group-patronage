@@ -1,6 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
+error CrowdFunding__idNotExist();
+error CrowdFunding__txnFailed();
+error CrowdFunding__lessETHSent();
+
 contract CrowdFunding {
     struct Campaign {
         address owner;
@@ -16,8 +20,13 @@ contract CrowdFunding {
     }
 
     mapping(uint256 => Campaign) public campaigns;
+    mapping(uint256 => bool) public idToCampaign;
 
     uint256 public numberOfCampaigns = 0;
+
+    // Events
+    event campaignCreated(uint256 indexed id, address indexed owner);
+    event donationMade(address indexed donator, address indexed receiver, uint256 indexed amount);
 
     function createCampaign(
         address _owner,
@@ -43,34 +52,52 @@ contract CrowdFunding {
         campaign.amountCollected = 0;
         campaign.image = _image;
         campaign.tag = _tag;
-        numberOfCampaigns++;
+        idToCampaign[numberOfCampaigns] = true;
 
+        emit campaignCreated(numberOfCampaigns, _owner);
+
+        numberOfCampaigns++;
         return numberOfCampaigns - 1;
     }
     
     
-function donateToCampaign(uint256 _id) public payable {
-    uint256 amount = msg.value;
+    function donateToCampaign(uint256 _id) public payable {
+        if (msg.value == 0) {
+            revert CrowdFunding__lessETHSent();
+        }
 
-    Campaign storage campaign = campaigns[_id];
+        if (!idToCampaign[_id]) {
+            revert CrowdFunding__idNotExist();
+        }
 
-    campaign.donators.push(msg.sender);
-    campaign.donations.push(amount);
+        uint256 amount = msg.value;
 
-    if (amount > 0) {
+        Campaign storage campaign = campaigns[_id];
+
+        campaign.donators.push(msg.sender);
+        campaign.donations.push(amount);
+
         uint256 previousAmountCollected = campaign.amountCollected;
         campaign.amountCollected = previousAmountCollected + amount;
 
         (bool sent, ) = payable(campaign.owner).call{value: amount}('');
-        require(sent, "Donation transfer failed");
 
-        // Perform additional state changes or emit events here
-    }
-}   
+        if (!sent) {
+            revert CrowdFunding__txnFailed();
+        }
+
+        emit donationMade(msg.sender, campaign.owner, amount);
+
+        // Perform additional state changes
+    }   
 
     function getDonators(
         uint256 _id
     ) public view returns (address[] memory, uint256[] memory) {
+        if (!idToCampaign[_id]) {
+            revert CrowdFunding__idNotExist();
+        }
+        
         return (campaigns[_id].donators, campaigns[_id].donations);
     }
 
