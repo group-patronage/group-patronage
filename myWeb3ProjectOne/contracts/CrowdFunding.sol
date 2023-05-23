@@ -3,6 +3,7 @@ pragma solidity ^0.8.9;
 
 error CrowdFunding__idNotExist();
 error CrowdFunding__txnFailed();
+error CrowdFunding__lessETHSent();
 
 contract CrowdFunding {
     struct Campaign {
@@ -39,7 +40,7 @@ contract CrowdFunding {
         Campaign storage campaign = campaigns[numberOfCampaigns];
 
         require(
-            campaign.deadline < block.timestamp,
+            block.timestamp < _deadline,
             'The deadline should be a date in the future.'
         );
 
@@ -58,8 +59,13 @@ contract CrowdFunding {
         numberOfCampaigns++;
         return numberOfCampaigns - 1;
     }
-
+    
+    
     function donateToCampaign(uint256 _id) public payable {
+        if (msg.value == 0) {
+            revert CrowdFunding__lessETHSent();
+        }
+
         if (!idToCampaign[_id]) {
             revert CrowdFunding__idNotExist();
         }
@@ -71,16 +77,19 @@ contract CrowdFunding {
         campaign.donators.push(msg.sender);
         campaign.donations.push(amount);
 
+        uint256 previousAmountCollected = campaign.amountCollected;
+        campaign.amountCollected = previousAmountCollected + amount;
+
         (bool sent, ) = payable(campaign.owner).call{value: amount}('');
 
-        if (sent) {
-            campaign.amountCollected = campaign.amountCollected + amount;
-            emit donationMade(msg.sender, campaign.owner, amount);
-        }
-        else {
+        if (!sent) {
             revert CrowdFunding__txnFailed();
         }
-    }
+
+        emit donationMade(msg.sender, campaign.owner, amount);
+
+        // Perform additional state changes
+    }   
 
     function getDonators(
         uint256 _id
@@ -88,6 +97,7 @@ contract CrowdFunding {
         if (!idToCampaign[_id]) {
             revert CrowdFunding__idNotExist();
         }
+        
         return (campaigns[_id].donators, campaigns[_id].donations);
     }
 
