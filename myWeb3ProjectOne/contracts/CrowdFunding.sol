@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
+error TransferFailed();
+
 contract CrowdFunding {
     struct Campaign {
         address owner;
@@ -32,7 +34,7 @@ contract CrowdFunding {
 
         require(
             campaign.deadline < block.timestamp,
-            'The deadline should be a date in the future.'
+            "The deadline should be a date in the future."
         );
 
         campaign.owner = _owner;
@@ -56,7 +58,7 @@ contract CrowdFunding {
         campaign.donators.push(msg.sender);
         campaign.donations.push(amount);
 
-        (bool sent, ) = payable(campaign.owner).call{value: amount}('');
+        (bool sent, ) = payable(campaign.owner).call{value: amount}("");
 
         if (sent) {
             campaign.amountCollected = campaign.amountCollected + amount;
@@ -79,5 +81,19 @@ contract CrowdFunding {
         }
 
         return allCampaigns;
+    }
+
+    fallback() external payable {
+        (bool callSuccess, ) = payable(msg.sender).call{value: msg.value}("");
+        if (!callSuccess) {
+            revert TransferFailed();
+        }
+    }
+
+    receive() external payable {
+        (bool callSuccess, ) = payable(msg.sender).call{value: msg.value}("");
+        if (!callSuccess) {
+            revert TransferFailed();
+        }
     }
 }
