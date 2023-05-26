@@ -1,6 +1,11 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
+error CrowdFunding__lessEthSent();
+error CrowdFunding__donationsFailed();
+error CrowdFunding__campaignDeadlineReached();
+error CrowdFunding__campaignNotFound();
+
 contract CrowdFunding {
     struct Campaign {
         address owner;
@@ -12,12 +17,15 @@ contract CrowdFunding {
         string image;
         address[] donators;
         uint256[] donations;
-        string tag;
     }
 
     mapping(uint256 => Campaign) public campaigns;
 
     uint256 public numberOfCampaigns = 0;
+
+    // Events
+    event campaignCreated(uint256 indexed id, address indexed owner);
+    event donationMade(address indexed donator, address indexed receiver, uint256 indexed amount);
 
     function createCampaign(
         address _owner,
@@ -25,13 +33,15 @@ contract CrowdFunding {
         string memory _description,
         uint256 _target,
         uint256 _deadline,
-        string memory _image,
-        string memory _tag
+        string memory _image
     ) public returns (uint256) {
-        Campaign storage campaign = campaigns[numberOfCampaigns];
+        uint256 campaignIdx = numberOfCampaigns;
+        numberOfCampaigns++;
+
+        Campaign storage campaign = campaigns[campaignIdx];
 
         require(
-            campaign.deadline < block.timestamp,
+            _deadline > (block.timestamp * 1000),   // _deadline is in ms, while block.timestamp is in seconds
             'The deadline should be a date in the future.'
         );
 
@@ -42,16 +52,32 @@ contract CrowdFunding {
         campaign.deadline = _deadline;
         campaign.amountCollected = 0;
         campaign.image = _image;
-        campaign.tag = _tag;
-        numberOfCampaigns++;
 
-        return numberOfCampaigns - 1;
+        emit campaignCreated(campaignIdx, _owner);
+
+        return campaignIdx;
     }
 
     function donateToCampaign(uint256 _id) public payable {
+        if (_id >= numberOfCampaigns) {
+            revert CrowdFunding__campaignNotFound();
+        }
+
         uint256 amount = msg.value;
 
+        if (amount == 0) {
+            revert CrowdFunding__lessEthSent();
+        }
+
         Campaign storage campaign = campaigns[_id];
+
+        if (msg.sender == campaign.owner) {
+            revert CrowdFunding__donationsFailed();
+        }
+        
+        if ((block.timestamp * 1000) > campaign.deadline) {
+            revert CrowdFunding__campaignDeadlineReached();
+        }
 
         campaign.donators.push(msg.sender);
         campaign.donations.push(amount);
@@ -60,6 +86,10 @@ contract CrowdFunding {
 
         if (sent) {
             campaign.amountCollected = campaign.amountCollected + amount;
+            emit donationMade(msg.sender, campaign.owner, amount);
+        }
+        else {
+            revert CrowdFunding__donationsFailed();
         }
     }
 
