@@ -2,11 +2,11 @@
 module.exports = {
   solidity: {
     version: '0.8.9',
-    defaultNetwork: 'goerli',
+    defaultNetwork: 'sepolia',
     networks: {
       hardhat: {},
-      goerli: {
-        url: 'https://rpc.ankr.com/eth_goerli',
+      sepolia: {
+        url: 'https://sepolia.infura.io/v3/',
         accounts: [`0x${process.env.PRIVATE_KEY}`]
       }
     },
@@ -18,3 +18,5 @@ module.exports = {
     },
   },
 };
+
+//deployed address 0xdafb4058Fe2b48Dc0965A3313B7F8173e49eC59d on thirdweb

@@ -6,7 +6,7 @@
     "release": "npx thirdweb@latest release"
   },
   "devDependencies": {
-    "hardhat": "^2.13.1"
+    "hardhat": "^2.14.0"
   },
   "dependencies": {
     "@thirdweb-dev/contracts": "^3",
