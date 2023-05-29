@@ -14,5 +14,10 @@ module.exports = {
       },
     },
   },
+  screens: {
+    //adding breakpoint for (min-width: 300px)
+    'xsm': '300px',
+    // => @media (min-width: 300px) { ... }
+  },
   plugins: [],
 }

@@ -6,7 +6,7 @@ const SurveyCard = ({handleClick }) => {
   
   return (
     <div className='flex gap-8 flex-wrap'>
-    <div className="sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+    <div className="xsm: w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
       <img src={surveyIcon} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
 
       <div className="flex flex-col p-4">
@@ -33,7 +33,7 @@ const SurveyCard = ({handleClick }) => {
           </div>
       </div>
     </div>
-     <div className="sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+     <div className="xsm: w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
       <img src={image2} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
 
       <div className="flex flex-col p-4">
@@ -60,7 +60,7 @@ const SurveyCard = ({handleClick }) => {
           </div>
       </div>
     </div>
-     <div className="sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+     <div className="xsm: w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
       <img src={image3} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
 
       <div className="flex flex-col p-4">
@@ -86,7 +86,7 @@ const SurveyCard = ({handleClick }) => {
           </div>
           </div>
       </div>
-    </div> <div className="sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+    </div> <div className="xsm: w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
       <img src={image4} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
 
       <div className="flex flex-col p-4">
@@ -113,7 +113,7 @@ const SurveyCard = ({handleClick }) => {
           </div>
       </div>
     </div>
-     <div className="sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+     <div className="xsm: w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
       <img src={image5} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
 
       <div className="flex flex-col p-4">

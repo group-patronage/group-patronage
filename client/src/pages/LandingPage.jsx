@@ -9,7 +9,7 @@ const LandingPage = () => {
   return (
     <div className="min-w-full min-h-full flex justify-center items-center">
       <div>
-        <h2 className="text-white text-6xl	mb-5 font-bold">
+        <h2 className="xsm: text-3xl md:text-6xl text-white text-6xl	mb-5 font-bold">
           Need CrowdFunding in Web3? <br />
           Here's a Solution
         </h2>
