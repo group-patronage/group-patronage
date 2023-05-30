@@ -1,3 +1,29 @@
+##  Project : Group Patronage 
+
+<div align="center">
+
+<img src="https://forthebadge.com/images/badges/open-source.svg" />
+<img src="https://forthebadge.com/images/badges/built-with-love.svg" />
+<img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" /><br>   
+<img src="https://forthebadge.com/images/badges/built-by-developers.svg" />
+<img src="https://forthebadge.com/images/badges/uses-brains.svg" />   
+</div> 
+
+<br>
+
+<div align="center">
+    <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/group-patronage/group-patronage?label=Repo%20Size&logo=github&logoColor=white&style=plastic">
+   <img alt="GitHub repo file count" src="https://img.shields.io/github/directory-file-count/group-patronage/group-patronage?style=plastic">
+   
+   [![GitHub issues](https://img.shields.io/github/issues/group-patronage/group-patronage?style=plastic)](https://github.com/group-patronage/group-patronage/issues)
+   [![GitHub pull requests](https://img.shields.io/github/issues-pr/group-patronage/group-patronage?style=plastic)](https://github.com/group-patronage/group-patronage/pulls)
+   [![GitHub](https://img.shields.io/github/license/group-patronage/group-patronage?style=plastic)](https://github.com/group-patronage/group-patronage/blob/master/LICENSE)
+   [![GitHub forks](https://img.shields.io/github/forks/group-patronage/group-patronage?label=Forks&style=plastic)](https://github.com/group-patronage/group-patronage/forks)
+   [![GitHub Repo stars](https://img.shields.io/github/stars/group-patronage/group-patronage?style=social)](https://github.com/group-patronage/group-patronage/stargazers)
+
+</div> 
+
+
 ## Getting Started
 
 Create a project using this example:
