@@ -31,6 +31,11 @@
    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
     <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" />
+    <img src="https://img.shields.io/badge/Solidity-F80000?style=for-the-badge&logo=Solidity&logoColor=white" /><br>
+    <img src="https://img.shields.io/badge/Auth0-36a9ae?style=for-the-badge&logo=Auth0&logoColor=white" />
+    <img src="https://img.shields.io/badge/Metamask-509EE3?style=for-the-badge&logo=Metamask&logoColor=fff" />
+    <img src="https://img.shields.io/badge/Web%203-414141?style=for-the-badge&logo=Web3.js&logoColor=white" />
+    <img src="https://img.shields.io/badge/Contract-F4B728?style=for-the-badge&logo=contract&logoColor=000" />
   
 </div><br>
 
