@@ -1,61 +1,85 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-import logoImage from "../assets/logo.png"; // Import the logo image
+import logoImage1 from "../assets/btc.png";
+import logoImage2 from "../assets/eth.png";
+import logoImage3 from "../assets/ava.png";
+import logoImage4 from "../assets/bin.png";
 
 const LandingPage = () => {
   const navigate = useNavigate();
-  const { user, isAuthenticated, loginWithRedirect } = useAuth0();
-  console.log("user", user);
-
-  const [backgroundColor, setBackgroundColor] = useState("transparent"); // Set the background color to transparent
+  const { isAuthenticated, loginWithRedirect } = useAuth0();
 
   return (
-    <div style={{ backgroundColor }}>
-      <div className="fixed inset-x-0 top-0 z-10 flex items-center justify-between py-4 px-6">
+    <section className="flex flex-col fixed items-center justify-center h-screen bg-[#13131a]">
+      {/* Header */}
+      <div className="fixed inset-x-0 top-0 z-10 flex items-center justify-between py-8 px-8">
         <div className="flex items-center justify-between w-full">
           <h2 className="text-white ml-5 mr-2 text-2xl font-bold">
             <span className="text-white">Group</span>
             <span className="text-[#4acd8d]">Patronage</span>
           </h2>
-
-          <div className="flex items-center">
-            <a
-              href="https://github.com/group-patronage/group-patronage"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mr-5 sm:mr-10"
-            >
-              <GitHubIcon style={{ color: "white" }} />
-            </a>
-            <button
-              className="rounded-md bg-[#4acd8d] mr-5 sm:mr-20 font-semibold p-2"
-              onClick={() => {
-                isAuthenticated ? navigate("/home") : loginWithRedirect();
-              }}
-            >
-              Let's Start
-            </button>
+          <div className="flex items-center px-8">
+            <div className="border border-[#4acd8d] bg-sky-900 rounded-md inline-block">
+              <button
+                className="text-white font-semibold p-2"
+                onClick={() => {
+                  isAuthenticated ? navigate("/home") : loginWithRedirect();
+                }}
+              >
+                Let's Start
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 z-0 flex justify-center items-center">
-  <div className="flex flex-col items-start">
-    <h2 className="text-white text-2xl sm:text-4xl lg:text-6xl mb-2 font-bold text-center sm:text-left">
-      Need CrowdFunding in Web3? <br />
-      Here's a Solution
-    </h2>
-  </div>
-  <img
-    src={logoImage}
-    alt="Logo"
-    className="w-16 sm:w-20 lg:w-24 ml-2 sm:ml-4"
-  />
-</div>
-      {/* Add your content here */}
-    </div>
+
+      {/* Content */}
+      <div className="max-w-full min-h-screen mx-auto md:ml-auto flex flex-col px-4 md:px-12 md:flex-row ml-20 justify-between items-center">
+        <div className="max-w-2xl px-6 ml-20 text-center md:text-left">
+          <h2 className="text-white text-3xl md:text-5xl mb-6 font-bold px-8">
+            <span className="text-white">Need CrowdFunding in Web3? </span>
+            <span className="text-[#4acd8d]">Here's a Solution</span>
+          </h2>
+          <p className="text-white font-sans text-2xl px-8">
+            Group Patronage aims to provide a decentralized crowdfunding
+            platform that addresses the common challenges faced by small-scale
+            startups and medium-sized businesses when it comes to raising funds.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-8 max-w-2xl px-8 mt-8 md:mt-0 bg-[#13131a]">
+          <div className="rounded-full overflow-hidden border border-[#4acd8d]">
+            <img src={logoImage1} alt="Image 1" className="w-full h-auto" />
+          </div>
+          <div className="rounded-full overflow-hidden border border-[#4acd8d]">
+            <img src={logoImage2} alt="Image 2" className="w-full h-auto" />
+          </div>
+          <div className="rounded-full overflow-hidden border border-[#4acd8d]">
+            <img src={logoImage3} alt="Image 3" className="w-full h-auto" />
+          </div>
+          <div className="rounded-full overflow-hidden border border-[#4acd8d]">
+            <img src={logoImage4} alt="Image 4" className="w-full h-auto" />
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-black-500 py-4 absolute bottom-3 ml-20 w-full">
+        <div className="container mx-auto flex items-center fixed bottom-4  justify-center font-bold accent-pink-400 animate-bounce text-[#4acd8d]">
+          <p className="mr-2">Contribute here</p>
+          <a
+            href="https://github.com/group-patronage/group-patronage"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white flex items-center hover:text-[#4acd8d]"
+          >
+            <GitHubIcon className="mr-1 transition duration-300 ease-in-out transform hover:scale-110" />
+          </a>
+        </div>
+      </footer>
+    </section>
   );
 };
 
