@@ -1,4 +1,14 @@
-##  Project : Group Patronage 
+<div align="center">
+    <h1> Project : Group Patronage </h1>
+
+We at Group Patronage aim to provide a decentralized crowdfunding platform that addresses the common challenges faced by small-scale startups and medium-sized businesses when it comes to raising funds.
+
+### Our Mission
+Raising capital is often a major hurdle for many startups and businesses, especially those at the early stages of development. Traditional fundraising methods can be cumbersome, lacking transparency, and restrict access to a limited pool of potential investors.
+
+To address these challenges, we are developing a decentralized crowdfunding platform. By utilizing a decentralized platform, we introduce transparency, broaden access to a wider investor community, and streamline the fundraising process.
+</div>
+<br>
 
 <div align="center">
 
