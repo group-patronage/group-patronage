@@ -20,12 +20,14 @@ contract CrowdFunding {
     }
 
     mapping(uint256 => Campaign) public campaigns;
+    mapping(uint256 => uint256) public amountWithdrawn;
 
     uint256 public numberOfCampaigns = 0;
 
     // Events
     event campaignCreated(uint256 indexed id, address indexed owner);
     event donationMade(address indexed donator, address indexed receiver, uint256 indexed amount);
+    event fundsWithdrawn(uint256 indexed id, address indexed owner, uint256 amount);
 
     function createCampaign(
         address _owner,
@@ -85,7 +87,7 @@ contract CrowdFunding {
         (bool sent, ) = payable(campaign.owner).call{value: amount}('');
 
         if (sent) {
-            campaign.amountCollected = campaign.amountCollected + amount;
+            campaign.amountCollected += amount;
             emit donationMade(msg.sender, campaign.owner, amount);
         }
         else {
@@ -93,9 +95,25 @@ contract CrowdFunding {
         }
     }
 
-    function getDonators(
-        uint256 _id
-    ) public view returns (address[] memory, uint256[] memory) {
+    function withdrawFunds(uint256 _id) public {
+        require(_id < numberOfCampaigns, 'Invalid campaign ID');
+        Campaign storage campaign = campaigns[_id];
+
+        require(msg.sender == campaign.owner, 'Only the campaign owner can withdraw funds');
+        require((block.timestamp * 1000) > campaign.deadline, 'Campaign deadline not reached');
+
+        uint256 amountToWithdraw = campaign.amountCollected - amountWithdrawn[_id];
+        require(amountToWithdraw > 0, 'No funds available for withdrawal');
+
+        amountWithdrawn[_id] += amountToWithdraw;
+
+        (bool sent, ) = payable(campaign.owner).call{value: amountToWithdraw}('');
+        require(sent, 'Failed to send funds to the campaign owner');
+
+        emit fundsWithdrawn(_id, campaign.owner, amountToWithdraw);
+    }
+
+    function getDonators(uint256 _id) public view returns (address[] memory, uint256[] memory) {
         return (campaigns[_id].donators, campaigns[_id].donations);
     }
 
