@@ -123,6 +123,15 @@ git push origin branch-name
 * Wait for your PR review and merge approval!
 * __Star this repository__ if you had fun!
 
+Thank you for considering contributing to Group patronage! Your contributions will play a crucial role in enhancing the functionality and user experience of the application.
+We would like to thank the following contributors for their valuable contributions to Group patronage:
+
+<div align="center">
+<a href="https://github.com/group-patronage/group-patronage/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=group-patronage/group-patronage" />
+</a>
+</a>
+
 
 ## License
 By contributing, you agree that your contributions will be licensed under its [MIT License.](https://choosealicense.com/licenses/mit/)
