@@ -51,16 +51,32 @@ const LandingPage = () => {
         </div>
         <div className="grid grid-cols-2 gap-8 max-w-2xl px-8 mt-8 md:mt-0 bg-[#13131a]">
           <div className="rounded-full overflow-hidden border border-[#4acd8d]">
-            <img src={logoImage1} alt="Image 1" className="w-full h-auto" />
+            <img
+              src={logoImage1}
+              alt="Image 1"
+              className="w-full h-auto hover:rotate-12 transform origin-center transition-all duration-300"
+            />
           </div>
           <div className="rounded-full overflow-hidden border border-[#4acd8d]">
-            <img src={logoImage2} alt="Image 2" className="w-full h-auto" />
+            <img
+              src={logoImage2}
+              alt="Image 2"
+              className="w-full h-auto hover:rotate-12 transform origin-center transition-all duration-300"
+            />
           </div>
           <div className="rounded-full overflow-hidden border border-[#4acd8d]">
-            <img src={logoImage3} alt="Image 3" className="w-full h-auto" />
+            <img
+              src={logoImage3}
+              alt="Image 3"
+              className="w-full h-auto hover:rotate-12 transform origin-center transition-all duration-300"
+            />
           </div>
           <div className="rounded-full overflow-hidden border border-[#4acd8d]">
-            <img src={logoImage4} alt="Image 4" className="w-full h-auto" />
+            <img
+              src={logoImage4}
+              alt="Image 4"
+              className="w-full h-auto hover:rotate-12 transform origin-center transition-all duration-300"
+            />
           </div>
         </div>
       </div>
