@@ -123,6 +123,24 @@ git push origin branch-name
 * Wait for your PR review and merge approval!
 * __Star this repository__ if you had fun!
 
+<br>
+
+<div align="center">
+
+![GSSoC23](https://raw.githubusercontent.com/girlscript/gssoc-assets/main/Logos/GS_logo_White.png)
+
+
+|   Venkatakrishnan Ramesh - Mentor                                                                                 | Lakshay - PROJECT ADMIN                                                                                    |
+| ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| ![Mentor 2](https://avatars.githubusercontent.com/u/74406604?v=4)                        | ![Mentor 3](https://avatars.githubusercontent.com/u/90516800?v=4)                           |
+| [LinkedIn](https://www.linkedin.com/in/venkatakrishnan-ramesh-997409214/) \| [GitHub](https://github.com/Venkatakrishnan-Ramesh) | [LinkedIn](https://www.linkedin.com/in/lakshaysk106/) \| [GitHub](https://github.com/LakshaySK106) |
+
+</div>
+<br>
+
+
+
+
 Thank you for considering contributing to Group patronage! Your contributions will play a crucial role in enhancing the functionality and user experience of the application.
 We would like to thank the following contributors for their valuable contributions to Group patronage:
 
