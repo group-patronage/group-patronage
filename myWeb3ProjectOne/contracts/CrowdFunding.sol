@@ -9,7 +9,7 @@ error CrowdFunding__campaignNotFound();
 contract CrowdFunding {
     struct Campaign {
         address owner;
-        string title;
+         string title;
         string description;
         uint256 target;
         uint256 deadline;
