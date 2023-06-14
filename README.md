@@ -130,13 +130,13 @@ git push origin branch-name
 ![GSSoC23](https://raw.githubusercontent.com/girlscript/gssoc-assets/main/Logos/GS_logo_White.png)
 
 
-|   Venkatakrishnan Ramesh - Mentor                                                                                 | Lakshay - PROJECT ADMIN                                                                                    |
+<!-- |   Venkatakrishnan Ramesh - Mentor                                                                                 | Lakshay - PROJECT ADMIN                                                                                    |
 | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | ![Mentor 2](https://avatars.githubusercontent.com/u/74406604?v=4)                        | ![Mentor 3](https://avatars.githubusercontent.com/u/90516800?v=4)                           |
 | [LinkedIn](https://www.linkedin.com/in/venkatakrishnan-ramesh-997409214/) \| [GitHub](https://github.com/Venkatakrishnan-Ramesh) | [LinkedIn](https://www.linkedin.com/in/lakshaysk106/) \| [GitHub](https://github.com/LakshaySK106) |
 
 </div>
-<br>
+<br> -->
 
 
 
