@@ -8,6 +8,14 @@ error CrowdFunding__campaignNotFound();
 
 error TransferFailed();
 
+
+//Interface for ERC20
+interface IERC20 {
+    function transfer(address, uint) external returns (bool);
+
+    function transferFrom(address, address, uint) external returns (bool);
+}
+
 contract CrowdFunding {
     struct Campaign {
         address owner;
@@ -19,12 +27,26 @@ contract CrowdFunding {
         string image;
         address[] donators;
         uint256[] donations;
-    }
 
+        string tag;
+  
+    }
+    IERC20 public token;
     mapping(uint256 => Campaign) public campaigns;
     mapping(uint256 => uint256) public amountWithdrawn;
 
     uint256 public numberOfCampaigns = 0;
+
+
+    constructor(address _token) {
+
+        token = IERC20(_token);
+    }
+    ///@dev This will change the tokens that will be received in the campaign
+    function changeToken(address _token) public{
+    require(campaigns[numberOfCampaigns - 1].deadline == 0 || block.timestamp >= campaigns[numberOfCampaigns - 1].deadline, "Cannot change mid-campaign");
+        token = IERC20(_token);
+    }
 
     // Events
     event campaignCreated(uint256 indexed id, address indexed owner);
@@ -58,10 +80,17 @@ contract CrowdFunding {
         campaign.deadline = _deadline;
         campaign.amountCollected = 0;
         campaign.image = _image;
+        campaign.tag = _tag;
+       
+        numberOfCampaigns++;
+
 
         emit campaignCreated(campaignIdx, _owner);
 
         return campaignIdx;
+    }
+    function bok() public view returns(uint256){
+        return block.timestamp;
     }
 
     function donateToCampaign(uint256 _id) public payable {
@@ -116,24 +145,35 @@ contract CrowdFunding {
 
         emit fundsWithdrawn(_id, campaign.owner, amountToWithdraw);
     }
+        function donateToCampaignUsingERC20(uint256 _id, uint _amount) public payable {
+        Campaign storage campaign = campaigns[_id];
+
+        campaign.donators.push(msg.sender);
+        campaign.donations.push(_amount);
+
+        token.transferFrom(msg.sender, campaign.owner, _amount);
+            campaign.amountCollected = campaign.amountCollected + _amount;
+    }
+
 
     function getDonators(uint256 _id) public view returns (address[] memory, uint256[] memory) {
         return (campaigns[_id].donators, campaigns[_id].donations);
     }
 
     function getCampaigns() public view returns (Campaign[] memory) {
-        Campaign[] memory allCampaigns = new Campaign[](numberOfCampaigns);
-         
-           Campaign storage item; 
-                 
-        for (uint i = 0; i < numberOfCampaigns; i++) {
-            item = campaigns[i];
+
+        uint256 _numberOfCampaigns = numberOfCampaigns;
+        Campaign[] memory allCampaigns = new Campaign[](_numberOfCampaigns);
+
+        for (uint i = 0; i < _numberOfCampaigns; i++) {
+            Campaign storage item = campaigns[i];
 
             allCampaigns[i] = item;
         }
 
         return allCampaigns;
     }
+
 
     fallback() external payable {
         (bool callSuccess, ) = payable(msg.sender).call{value: msg.value}("");
@@ -148,4 +188,5 @@ contract CrowdFunding {
             revert TransferFailed();
         }
     }
+
 }
