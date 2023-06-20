@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.20;
 
 error CrowdFunding__lessEthSent();
 error CrowdFunding__donationsFailed();
@@ -9,7 +9,7 @@ error CrowdFunding__campaignNotFound();
 contract CrowdFunding {
     struct Campaign {
         address owner;
-        string title;
+         string title;
         string description;
         uint256 target;
         uint256 deadline;
