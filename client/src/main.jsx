@@ -11,8 +11,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <Auth0Provider
-    domain="dev-5z6hgz09.us.auth0.com"
-    clientId="GAaTpPd3lgCGCku3RVjeHTe2Bg6rPzK9"
+     domain="dev-q3ajekoutfezj6ts.us.auth0.com"
+    clientId="RuiRy5QO3PxsQrv3DpEHJBlx7pAHU4qj"
     redirectUri={window.location.origin+"/home"}
   >
     <ThirdwebProvider desiredChainId={ChainId.Goerli}>
