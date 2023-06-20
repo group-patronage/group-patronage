@@ -6,6 +6,8 @@ error CrowdFunding__donationsFailed();
 error CrowdFunding__campaignDeadlineReached();
 error CrowdFunding__campaignNotFound();
 
+error TransferFailed();
+
 contract CrowdFunding {
     struct Campaign {
         address owner;
@@ -43,8 +45,10 @@ contract CrowdFunding {
         Campaign storage campaign = campaigns[campaignIdx];
 
         require(
+
             _deadline > (block.timestamp * 1000),   // _deadline is in ms, while block.timestamp is in seconds
             'The deadline should be a date in the future.'
+
         );
 
         campaign.owner = _owner;
@@ -84,7 +88,7 @@ contract CrowdFunding {
         campaign.donators.push(msg.sender);
         campaign.donations.push(amount);
 
-        (bool sent, ) = payable(campaign.owner).call{value: amount}('');
+        (bool sent, ) = payable(campaign.owner).call{value: amount}("");
 
         if (sent) {
             campaign.amountCollected += amount;
@@ -129,5 +133,19 @@ contract CrowdFunding {
         }
 
         return allCampaigns;
+    }
+
+    fallback() external payable {
+        (bool callSuccess, ) = payable(msg.sender).call{value: msg.value}("");
+        if (!callSuccess) {
+            revert TransferFailed();
+        }
+    }
+
+    receive() external payable {
+        (bool callSuccess, ) = payable(msg.sender).call{value: msg.value}("");
+        if (!callSuccess) {
+            revert TransferFailed();
+        }
     }
 }
