@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
 import logoImage1 from "../assets/btc.png";
 import logoImage2 from "../assets/eth.png";
@@ -11,6 +12,15 @@ import logoImage4 from "../assets/bin.png";
 const LandingPage = () => {
   const navigate = useNavigate();
   const { isAuthenticated, loginWithRedirect } = useAuth0();
+  const [text] = useTypewriter({
+    words: ['Need CrowdFunding in Web3?','Online CrowdFunding Platform','Web CrowdFunding Platform'],
+    loop: true,
+    typeSpeed: 90,
+    deleteSpeed: 90,
+    delaySpeed: 1000,
+  });
+
+  
 
   return (
     <section className="flex flex-col fixed items-center justify-center h-screen bg-[#13131a]">
@@ -40,7 +50,13 @@ const LandingPage = () => {
       <div className="max-w-full min-h-screen mx-auto md:ml-auto flex flex-col px-4 md:px-12 md:flex-row ml-20 justify-between items-center">
         <div className="max-w-2xl px-6 ml-20 text-center md:text-left">
           <h2 className="text-white text-3xl md:text-5xl mb-6 font-bold px-8">
-            <span className="text-white">Need CrowdFunding in Web3? </span>
+            <span className="text-white">{text} </span>
+            <Cursor
+                    cursorBlinking="false"
+                    cursorStyle="|"
+                    cursorColor="#4acd8d"
+                    
+                />
             <span className="text-[#4acd8d]">Here's a Solution</span>
           </h2>
           <p className="text-white font-sans text-2xl px-8">
