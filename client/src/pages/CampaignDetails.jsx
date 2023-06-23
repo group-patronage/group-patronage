@@ -32,9 +32,18 @@ const CampaignDetails = () => {
   const handleDonate = async () => {
     setIsLoading(true);
 
-    await donate(state.pId, amount); 
-
-    navigate('/home')
+    try {
+      await donate(state.pId, amount); 
+    }
+    catch (err) {
+      // Execution will be reverted in case: 
+      // caller is owner
+      // Amount donated is 0
+      // the campaign id not exist
+      // Campaign deadline is reached
+      console.log("Error in donation, this can be due to various cases.")
+    }
+    
     setIsLoading(false);
   }
 
