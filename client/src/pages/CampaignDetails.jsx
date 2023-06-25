@@ -57,7 +57,7 @@ const CampaignDetails = () => {
         <Sidebar />
       </div>
 
-      <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
+      <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5 sm:pt-5">
         <Navbar />
       <div className="w-full flex md:flex-row flex-col mt-10 gap-[30px]">
         <div className="flex-1 flex-col">

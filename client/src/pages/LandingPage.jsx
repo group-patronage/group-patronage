@@ -23,14 +23,16 @@ const LandingPage = () => {
   
 
   return (
-    <section className="flex flex-col fixed items-center justify-center h-screen bg-[#13131a]">
+    <section className="flex md:flex-col lgl:fixed items-center justify-center lgl:h-screen bg-[#13131a]">
       {/* Header */}
-      <div className="fixed inset-x-0 top-0 z-10 flex items-center justify-between py-8 px-8">
-        <div className="flex items-center justify-between w-full">
+      <div className="fixed inset-x-0 top-0  bg-[#13131a] backdrop-opacity-95 flex items-center justify-between py-8 px-8">
+        <div className="flex items-center justify-between">
           <h2 className="text-white ml-5 mr-2 text-2xl font-bold">
             <span className="text-white">Group</span>
             <span className="text-[#4acd8d]">Patronage</span>
           </h2>
+        </div>
+       
           <div className="flex items-center px-5">
             <div className="border border-[#4acd8d] bg-slate-50 hover:bg-slate-800 hover:text-white hover:transition-all duration-700 rounded-[10px] inline-block">
               <button
@@ -43,13 +45,15 @@ const LandingPage = () => {
               </button>
             </div>
           </div>
-        </div>
-      </div>
+
+          </div>
+
+       
 
       {/* Content */}
-      <div className="max-w-full min-h-screen mx-auto md:ml-auto flex flex-col px-4 md:px-12 md:flex-row ml-20 justify-between items-center">
-        <div className="max-w-2xl px-6 ml-20 text-center md:text-left">
-          <h2 className="text-white text-3xl md:text-5xl mb-6 font-bold px-8">
+      <div className="min-h-screen lgl:mx-auto mt-40 lgl:mt-2 md:ml-auto flex flex-col lgl:flex-row lgl:px-4 md:px-12 md:flex-row lgl:ml-20 justify-between items-center">
+        <div className="w-full lgl:max-w-2xl px-6 lgl:ml-10 lgl:pt-2  md:text-left">
+          <h2 className="text-white text-3xl md:text-5xl mb-6 font-bold px-8 lgl:pt-5">
             <span className="text-white">{text} </span>
             <Cursor
                     cursorBlinking="false"

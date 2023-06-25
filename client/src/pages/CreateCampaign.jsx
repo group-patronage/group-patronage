@@ -84,13 +84,13 @@ const CreateCampaign = () => {
         <Sidebar />
       </div>
 
-      <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
+      <div className="flex-1 w-[100px] sm:pt-5 lgl:w-full  h-full lgl:mx-auto sm:pr-5">
         <Navbar />
 
     <div className="bg-[#1c1c24] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
       {isLoading && <Loader />}
       
-      <div className="flex justify-center items-center p-[12px] sm:min-w-[380px] shadow-gray-400 shadow-md rounded-[6px]">
+      <div className="flex justify-center items-center p-[12px] sm:w-[250px] shadow-gray-400 shadow-md rounded-[6px]">
         <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-white">Start a Campaign</h1>
       </div>
 
