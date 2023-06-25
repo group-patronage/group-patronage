@@ -44,7 +44,7 @@ const CampaignDetails = () => {
       
       {isLoading && <Loader />}
       
-      <div className="sm:flex hidden mr-10 relative">
+      <div className="hidden sm:block md:block lg:block xl:block mr-10 relative">
         <Sidebar />
       </div>
 

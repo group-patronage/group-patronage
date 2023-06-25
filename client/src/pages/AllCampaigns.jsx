@@ -22,7 +22,7 @@ const Profile = () => {
 
   return (
      <>
-      <div className=" mr-10 ">
+      <div className=" mr-10 hidden sm:block md:block lg:block xl:block">
         <Sidebar />
       </div>
 
