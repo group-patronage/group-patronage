@@ -4,10 +4,10 @@ import { useAuth0 } from "@auth0/auth0-react";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 
-import logoImage1 from "../assets/btc.png";
-import logoImage2 from "../assets/eth.png";
-import logoImage3 from "../assets/ava.png";
-import logoImage4 from "../assets/bin.png";
+import logoImage1 from "../assets/btc.webp";
+import logoImage2 from "../assets/eth.webp";
+import logoImage3 from "../assets/ava.webp";
+import logoImage4 from "../assets/bin.webp";
 
 const LandingPage = () => {
   const navigate = useNavigate();

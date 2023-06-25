@@ -11,14 +11,14 @@ import search from './search.svg';
 import menu from './menu.svg';
 import money from './money.svg';
 import loader from './loader.svg';
-import thirdweb from './thirdweb.png';
-import github from './github.png'
-import homeIcon from './homeIcon.png';
-import surveyIcon from './surveyIcon.png';
-import image2 from './image2.png';
-import image3 from "./image3.png";
-import image4 from "./image4.png";
-import image5 from "./image5.png";
+import thirdweb from './thirdweb.webp';
+import github from './github.webp'
+import homeIcon from './homeIcon.webp';
+import surveyIcon from './surveyIcon.webp';
+import image2 from './image2.webp';
+import image3 from "./image3.webp";
+import image4 from "./image4.webp";
+import image5 from "./image5.webp";
 
 
 
