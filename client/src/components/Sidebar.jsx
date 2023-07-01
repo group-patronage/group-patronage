@@ -33,9 +33,9 @@ const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => {
         onMouseLeave={handleMouseLeave}
       >
         {!isActive ? (
-          <img src={imgUrl} alt="fund_logo" className="w-1/2 h-1/2" />
+          <img loading="lazy" src={imgUrl} alt="fund_logo" className="w-1/2 h-1/2" />
         ) : (
-          <img
+          <img loading="lazy"
             src={imgUrl}
             alt="fund_logo"
             className={`w-1/2 h-1/2 ${
