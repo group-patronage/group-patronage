@@ -32,7 +32,7 @@ const LandingPage = () => {
             <span className="text-[#4acd8d]">Patronage</span>
           </h2>
           <div className="flex items-center px-5">
-            <div className="border border-[#4acd8d] bg-slate-50 hover:bg-slate-800 hover:text-white hover:transition-all duration-700 rounded-[10px] inline-block">
+            <div className="border border-[#3da975] bg-slate-50 hover:bg-slate-800 hover:text-white hover:transition-all duration-700 rounded-[10px] inline-block">
               <button
                 className="text-gray text-[18px] font-semibold p-2"
                 onClick={() => {
