@@ -23,6 +23,7 @@ const LandingPage = () => {
   
 
   return (
+
     <section className="flex flex-col fixed items-center justify-center h-screen bg-[#13131a]">
       {/* Header */}
       <div className="fixed inset-x-0 top-0 z-10 flex items-center justify-between py-8 px-8">
@@ -44,6 +45,7 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+
       </div>
 
       {/* Content */}

@@ -6,8 +6,11 @@ const SurveyCard = ({handleClick }) => {
   
   return (
     <div className='flex gap-8 flex-wrap'>
-    <div className="sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+
+    <div className="xs:w-[270px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+      
       <img loading="lazy" src={surveyIcon} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+
 
       <div className="flex flex-col p-4">
         <div className="flex flex-row items-center mb-[18px]">
@@ -33,8 +36,11 @@ const SurveyCard = ({handleClick }) => {
           </div>
       </div>
     </div>
-     <div className="sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+
+     <div className="xsm:w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+      
       <img loading="lazy" src={image2} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+
 
       <div className="flex flex-col p-4">
         <div className="flex flex-row items-center mb-[18px]">
@@ -60,8 +66,11 @@ const SurveyCard = ({handleClick }) => {
           </div>
       </div>
     </div>
-     <div className="sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+
+     <div className="xsm:w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+      
       <img loading="lazy" src={image3} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+
 
       <div className="flex flex-col p-4">
         <div className="flex flex-row items-center mb-[18px]">
@@ -86,7 +95,9 @@ const SurveyCard = ({handleClick }) => {
           </div>
           </div>
       </div>
-    </div> <div className="sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+    </div> 
+    <div className="xsm:w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+      
       <img loading="lazy" src={image4} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
 
       <div className="flex flex-col p-4">
@@ -113,8 +124,11 @@ const SurveyCard = ({handleClick }) => {
           </div>
       </div>
     </div>
-     <div className="sm:w-[288px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+
+     <div className="xsm:w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+      
       <img loading="lazy" src={image5} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+
 
       <div className="flex flex-col p-4">
         <div className="flex flex-row items-center mb-[18px]">
@@ -128,7 +142,7 @@ const SurveyCard = ({handleClick }) => {
         </div>
 
          
-    < div className="flex justify-between flex-wrap mt-[15px] gap-2">
+    <div className="flex justify-between flex-wrap mt-[15px] gap-2">
         <div className="flex flex-col">
             <h4 className="font-epilogue font-semibold text-[14px] text-[#b2b3bd] leading-[22px]">Views - 511</h4>
             <p className="mt-[3px] font-epilogue font-normal text-[12px] leading-[18px] text-[#808191] sm:max-w-[120px] truncate">Upvotes - 18</p>
