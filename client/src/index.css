@@ -11,8 +11,21 @@
     #000000 87.01%
   );
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background:black;
+}
+
+::-webkit-scrollbar-thumb {
+  background:linear-gradient(to top,rgb(74, 83, 205),transparent);
+}
+
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
   filter: invert(0.8);
 }
+

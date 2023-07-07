@@ -6,12 +6,15 @@ const SurveyCard = ({handleClick }) => {
   
   return (
     <div className='flex gap-8 flex-wrap'>
+
     <div className="xs:w-[270px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
-      <img src={surveyIcon} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+      
+      <img loading="lazy" src={surveyIcon} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+
 
       <div className="flex flex-col p-4">
         <div className="flex flex-row items-center mb-[18px]">
-          <img src={tagType} alt="tag" className="w-[17px] h-[17px] object-contain"/>
+          <img loading="lazy" src={tagType} alt="tag" className="w-[17px] h-[17px] object-contain"/>
           <p className="ml-[12px] mt-[2px] font-epilogue font-medium text-[12px] text-[#808191]">Innovation</p>
         </div>
 
@@ -33,12 +36,15 @@ const SurveyCard = ({handleClick }) => {
           </div>
       </div>
     </div>
+
      <div className="xsm:w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
-      <img src={image2} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+      
+      <img loading="lazy" src={image2} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+
 
       <div className="flex flex-col p-4">
         <div className="flex flex-row items-center mb-[18px]">
-          <img src={tagType} alt="tag" className="w-[17px] h-[17px] object-contain"/>
+          <img loading="lazy" src={tagType} alt="tag" className="w-[17px] h-[17px] object-contain"/>
           <p className="ml-[12px] mt-[2px] font-epilogue font-medium text-[12px] text-[#808191]">Education</p>
         </div>
 
@@ -60,12 +66,15 @@ const SurveyCard = ({handleClick }) => {
           </div>
       </div>
     </div>
+
      <div className="xsm:w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
-      <img src={image3} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+      
+      <img loading="lazy" src={image3} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+
 
       <div className="flex flex-col p-4">
         <div className="flex flex-row items-center mb-[18px]">
-          <img src={tagType} alt="tag" className="w-[17px] h-[17px] object-contain"/>
+          <img loading="lazy" src={tagType} alt="tag" className="w-[17px] h-[17px] object-contain"/>
           <p className="ml-[12px] mt-[2px] font-epilogue font-medium text-[12px] text-[#808191]">Social</p>
         </div>
 
@@ -88,11 +97,12 @@ const SurveyCard = ({handleClick }) => {
       </div>
     </div> 
     <div className="xsm:w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
-      <img src={image4} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+      
+      <img loading="lazy" src={image4} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
 
       <div className="flex flex-col p-4">
         <div className="flex flex-row items-center mb-[18px]">
-          <img src={tagType} alt="tag" className="w-[17px] h-[17px] object-contain"/>
+          <img loading="lazy" src={tagType} alt="tag" className="w-[17px] h-[17px] object-contain"/>
           <p className="ml-[12px] mt-[2px] font-epilogue font-medium text-[12px] text-[#808191]">Technology</p>
         </div>
 
@@ -114,12 +124,15 @@ const SurveyCard = ({handleClick }) => {
           </div>
       </div>
     </div>
+
      <div className="xsm:w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
-      <img src={image5} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+      
+      <img loading="lazy" src={image5} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
+
 
       <div className="flex flex-col p-4">
         <div className="flex flex-row items-center mb-[18px]">
-          <img src={tagType} alt="tag" className="w-[17px] h-[17px] object-contain"/>
+          <img loading="lazy" src={tagType} alt="tag" className="w-[17px] h-[17px] object-contain"/>
           <p className="ml-[12px] mt-[2px] font-epilogue font-medium text-[12px] text-[#808191]">Health</p>
         </div>
 

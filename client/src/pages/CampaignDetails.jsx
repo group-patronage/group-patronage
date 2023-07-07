@@ -32,9 +32,18 @@ const CampaignDetails = () => {
   const handleDonate = async () => {
     setIsLoading(true);
 
-    await donate(state.pId, amount); 
-
-    navigate('/home')
+    try {
+      await donate(state.pId, amount); 
+    }
+    catch (err) {
+      // Execution will be reverted in case: 
+      // caller is owner
+      // Amount donated is 0
+      // the campaign id not exist
+      // Campaign deadline is reached
+      console.log("Error in donation, this can be due to various cases.")
+    }
+    
     setIsLoading(false);
   }
 
@@ -52,7 +61,7 @@ const CampaignDetails = () => {
         <Navbar />
       <div className="w-full flex md:flex-row flex-col mt-10 gap-[30px]">
         <div className="flex-1 flex-col">
-          <img src={state.image} alt="campaign" className="w-full h-[410px] object-cover rounded-xl"/>
+          <img loading="lazy" src={state.image} alt="campaign" className="w-full h-[410px] object-cover rounded-xl"/>
           <div className="relative w-full h-[5px] bg-[#3a3a43] mt-2">
             <div className="absolute h-full bg-[#6e62cc]" style={{ width: `${calculateBarPercentage(state.target, state.amountCollected)}%`, maxWidth: '100%'}}>
             </div>
@@ -73,7 +82,7 @@ const CampaignDetails = () => {
 
             <div className="mt-[20px] flex flex-row items-center flex-wrap gap-[14px]">
               <div className="w-[52px] h-[52px] flex items-center justify-center rounded-full bg-[#2c2f32] cursor-pointer">
-                <img src={thirdweb} alt="user" className="w-[60%] h-[60%] object-contain"/>
+                <img loading="lazy" src={thirdweb} alt="user" className="w-[60%] h-[60%] object-contain"/>
               </div>
               <div>
                 <h4 className="font-epilogue font-semibold text-[14px] text-white break-all">{state.owner}</h4>

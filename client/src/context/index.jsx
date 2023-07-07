@@ -7,7 +7,8 @@ import { EditionMetadataWithOwnerOutputSchema } from '@thirdweb-dev/sdk';
 const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
-  const { contract } = useContract('0xFAAC7aaE472aa2059b0cD054FA9CFC17d23bC5f1');
+  // const { contract } = useContract('0xFAAC7aaE472aa2059b0cD054FA9CFC17d23bC5f1');
+  const { contract } = useContract('0x5942FcAC2C92E73af58366A628497BACA7C56f6c');
   const { mutateAsync: createCampaign } = useContractWrite(contract, 'createCampaign');
 
   const address = useAddress();
@@ -16,12 +17,12 @@ export const StateContextProvider = ({ children }) => {
   const publishCampaign = async (form) => {
     try {
       const data = await createCampaign([
-        address, // owner
         form.title, // title
         form.description, // description
         form.target,
         new Date(form.deadline).getTime(), // deadline,
-        form.image
+        form.image,
+        "Tag"             // This field is not yet implemented in front-end
       ])
 
       console.log("contract call success", data)
@@ -32,16 +33,19 @@ export const StateContextProvider = ({ children }) => {
 
   const getCampaigns = async () => {
     const campaigns = await contract.call('getCampaigns');
-    const parsedCampaings = campaigns.map((campaign, i) => ({
-      owner: campaign.owner,
-      title: campaign.title,
-      description: campaign.description,
-      target: ethers.utils.formatEther(campaign.target.toString()),
-      deadline: campaign.deadline.toNumber(),
-      amountCollected: ethers.utils.formatEther(campaign.amountCollected.toString()),
-      image: campaign.image,
-      pId: i
-    }));
+    
+    const parsedCampaings = campaigns
+      .filter(campaign => campaign.deadline.toNumber() >= Date.now())
+      .map((campaign, i) => ({
+        owner: campaign.owner,
+        title: campaign.title,
+        description: campaign.description,
+        target: ethers.utils.formatEther(campaign.target.toString()),
+        deadline: campaign.deadline.toNumber(),
+        amountCollected: ethers.utils.formatEther(campaign.amountCollected.toString()),
+        image: campaign.image,
+        pId: i
+      }));
 
     return parsedCampaings;
   }

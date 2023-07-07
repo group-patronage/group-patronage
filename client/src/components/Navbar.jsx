@@ -40,7 +40,7 @@ const Navbar = () => {
         <input type="text" placeholder="Search for campaigns" className="flex w-full font-epilogue font-normal text-[14px] placeholder:text-[#4b5264] text-white bg-transparent outline-none" />
 
         <div className="w-[72px] h-full rounded-[20px] bg-[#4acd8d] flex justify-center items-center cursor-pointer">
-          <img src={search} alt="search" className="w-[15px] h-[15px] object-contain" />
+          <img loading="lazy" src={search} alt="search" className="w-[15px] h-[15px] object-contain" />
         </div>
       </div>
 
@@ -59,7 +59,7 @@ const Navbar = () => {
         {/* 
         <a href="https://github.com/LakshaySK106" target='_blank'>
           <div className="w-[52px] h-[52px] rounded-full flex justify-center items-center cursor-pointer">
-            <img src={github} alt="user" className="w-[90%] h-[90%] object-contain" />
+            <img loading="lazy" src={github} alt="user" className="w-[90%] h-[90%] object-contain" />
           </div>
         </a> */}
 
@@ -137,10 +137,10 @@ const Navbar = () => {
       {/* Small screen navigation */}
       <div className="sm:hidden flex justify-between items-center relative">
         <div className="w-[40px] h-[40px] rounded-[10px] bg-[#2c2f32] flex justify-center items-center cursor-pointer">
-          <img src={logo} alt="user" className="w-[60%] h-[60%] object-contain" />
+          <img loading="lazy" src={logo} alt="user" className="w-[60%] h-[60%] object-contain" />
         </div>
 
-        <img
+        <img loading="lazy"
           src={menu}
           alt="menu"
           className="w-[34px] h-[34px] object-contain cursor-pointer"
@@ -159,7 +159,7 @@ const Navbar = () => {
                   navigate(link.link);
                 }}
               >
-                <img
+                <img loading="lazy"
                   src={link.imgUrl}
                   alt={link.name}
                   className={`w-[24px] h-[24px] object-contain ${isActive === link.name ? 'grayscale-0' : 'grayscale'}`}

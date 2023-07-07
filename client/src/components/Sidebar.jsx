@@ -4,20 +4,65 @@ import { logo, sun, profile, money, payment, homeIcon} from '../assets';
 import { navlinks } from '../constants';
 import { useAuth0 } from "@auth0/auth0-react"
 
-const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => (
-  <div className={`w-[48px] h-[48px] rounded-[10px] ${isActive && isActive === name && 'bg-[#2c2f32]'} flex justify-center items-center ${!disabled && 'cursor-pointer'} ${styles}`} onClick={handleClick}>
-    {!isActive ? (
-      <img src={imgUrl} alt="fund_logo" className="w-1/2 h-1/2" />
-    ) : (
-      <img src={imgUrl} alt="fund_logo" className={`w-1/2 h-1/2 ${isActive !== name && 'grayscale'}`} />
-    )}
-  </div>
-)
+const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleIconClick = () => {
+    if (!disabled) {
+      handleClick(name);
+    }
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  return (
+    <a onClick={handleIconClick}>
+      <div
+        className={`w-[48px] h-[48px] rounded-[10px] ${
+          isActive && isActive === name ? 'bg-[#2c2f32]' : ''
+        } flex justify-center items-center ${
+          !disabled ? 'cursor-pointer' : ''
+        } ${styles}`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {!isActive ? (
+          <img loading="lazy" src={imgUrl} alt="fund_logo" className="w-1/2 h-1/2" />
+        ) : (
+          <img loading="lazy"
+            src={imgUrl}
+            alt="fund_logo"
+            className={`w-1/2 h-1/2 ${
+              isActive !== name ? 'grayscale' : ''
+            } hover:filter-none`}
+          />
+        )}
+        {isHovered && <span className="absolute bg-[#2c2f32] text-white p-2 rounded text-sm">{name}</span>}
+      </div>
+    </a>
+  );
+};
+
+
 
 const Sidebar = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState('dashboard');
   const { logout } = useAuth0();
+
+  const handleIconClick = (name, link, disabled) => {
+    if (!disabled) {
+      setIsActive(name);
+      if (name === 'logout') logout();
+      else navigate(link);
+    }
+  };
 
   return (
     <div className="flex  justify-between items-center flex-col sticky top-5 h-[55vh]">
@@ -32,13 +77,7 @@ const Sidebar = () => {
               key={index}
               {...link}
               isActive={isActive}
-              handleClick={() => {
-                if(!link.disabled) {
-                  setIsActive(link.name);
-                  if(link.name === 'logout') logout();
-                  else navigate(link.link);
-                }
-              }}
+              handleClick={() => handleIconClick(link.name, link.link, link.disabled)}
             />
           ))}
         </div>
@@ -47,5 +86,7 @@ const Sidebar = () => {
     </div>
   )
 }
+
+
 
 export default Sidebar
