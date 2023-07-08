@@ -204,7 +204,7 @@ const CreateCampaign = () => {
             <CustomButton 
               btnType="submit"
               title="Submit new campaign"
-              styles="bg-[#1dc071]"
+              styles="bg-[#1dc071] hover:bg-[#313549] hover:transition-all duration-700 hover:shadow-gray-400 shadow-md"
               handleClick={handleSubmit}  
             />
           </div>
