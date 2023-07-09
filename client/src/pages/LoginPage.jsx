@@ -14,7 +14,7 @@ function LoginPage() {
                 styles={!isAuthenticated ? 'bg-[#1dc071]' : 'bg-[#8c6dfd]'}
                 handleClick={() => {
                     if(!isAuthenticated) loginWithRedirect();
-                    else logout();
+                    else logout({ logoutParams: { returnTo: window.location.origin } });
                 }}
             />
         </div>
