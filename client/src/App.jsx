@@ -16,7 +16,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 const App = () => {
   const { isLoading } = useAuth0();
   return (
-    <div className="relative p-4 bg-[#13131a] min-h-screen flex flex-row">
+    <div className="relative overflow-hidden p-4 bg-[#13131a] min-h-screen flex flex-row">
       <Suspense fallback={<StartingLoader />}>
         <Routes>
           <Route
