@@ -7,7 +7,7 @@ const SurveyCard = ({handleClick }) => {
   return (
     <div className='flex gap-8 flex-wrap'>
 
-    <div className="xs:w-[270px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
+    <div className="xsm:w-[170px] sm:w-[480px] md:w-[500px] w-full rounded-[15px] bg-[#1c1c24] cursor-pointer" onClick={handleClick}>
       
       <img loading="lazy" src={surveyIcon} alt="fund" className="w-full h-[158px] object-cover rounded-[15px]"/>
 

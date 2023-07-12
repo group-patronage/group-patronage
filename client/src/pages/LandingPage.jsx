@@ -24,9 +24,9 @@ const LandingPage = () => {
 
   return (
 
-    <section className="flex flex-col fixed items-center justify-center h-screen bg-[#13131a]">
+    <section className="flex md:flex-col lgl:fixed items-center justify-center lgl:h-screen bg-[#13131a]">
       {/* Header */}
-      <div className="fixed inset-x-0 top-0 z-10 flex items-center justify-between py-8 px-8">
+      <div className="fixed inset-x-0 top-0  bg-[#13131a] z-10 flex items-center justify-between py-8 px-8">
         <div className="flex items-center justify-between w-full">
           <h2 className="text-white ml-5 mr-2 text-2xl font-bold">
             <span className="text-white">Group</span>
@@ -48,10 +48,11 @@ const LandingPage = () => {
 
       </div>
 
+   
       {/* Content */}
-      <div className="max-w-full min-h-screen mx-auto md:ml-auto flex flex-col px-4 md:px-12 md:flex-row ml-20 justify-between items-center">
-        <div className="max-w-2xl px-6 ml-20 text-center md:text-left">
-          <h2 className="text-white text-3xl md:text-5xl mb-6 font-bold px-8">
+      <div className="min-h-screen lgl:mx-auto mt-40 lgl:mt-2 md:ml-auto flex flex-col lgl:flex-row lgl:px-4 md:px-12 md:flex-row lgl:ml-20 justify-between items-center">
+        <div className="w-full lgl:max-w-2xl px-6 lgl:ml-10 lgl:pt-2  md:text-left">
+          <h2 className="text-white text-3xl md:text-5xl mb-6 font-bold px-8 lgl:pt-5">
             <span className="text-white">{text} </span>
             <Cursor
                     cursorBlinking="false"
@@ -69,28 +70,28 @@ const LandingPage = () => {
         </div>
         <div className="grid grid-cols-2 gap-8 max-w-2xl px-8 mt-8 md:mt-0 bg-[#13131a]">
           <div className="rounded-full overflow-hidden border border-[#4acd8d]">
-            <img loading="lazy"
+            <img
               src={logoImage1}
               alt="Image 1"
               className="w-full h-auto hover:rotate-12 transform origin-center transition-all duration-300"
             />
           </div>
           <div className="rounded-full overflow-hidden border border-[#4acd8d]">
-            <img loading="lazy"
+            <img
               src={logoImage2}
               alt="Image 2"
               className="w-full h-auto hover:rotate-12 transform origin-center transition-all duration-300"
             />
           </div>
           <div className="rounded-full overflow-hidden border border-[#4acd8d]">
-            <img loading="lazy"
+            <img
               src={logoImage3}
               alt="Image 3"
               className="w-full h-auto hover:rotate-12 transform origin-center transition-all duration-300"
             />
           </div>
           <div className="rounded-full overflow-hidden border border-[#4acd8d]">
-            <img loading="lazy"
+            <img
               src={logoImage4}
               alt="Image 4"
               className="w-full h-auto hover:rotate-12 transform origin-center transition-all duration-300"
@@ -99,10 +100,11 @@ const LandingPage = () => {
         </div>
       </div>
 
+
       {/* Footer */}
-      <footer className="bg-black-500 py-4 absolute bottom-3 ml-20 w-full">
+      <footer className="bg-black-500 py-4 absolute bottom-3 ml-40 mdl:ml-20 w-full">
         <div className="container mx-auto flex items-center fixed bottom-4  justify-center font-bold accent-pink-400 animate-bounce text-[#4acd8d]">
-          <p className="mr-2">Contribute here</p>
+          <p className="mr-6">Contribute here</p>
           <a
             href="https://github.com/group-patronage/group-patronage"
             target="_blank"
