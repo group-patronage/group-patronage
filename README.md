@@ -67,6 +67,11 @@ Embrace the future of fundraising with us as we unlock a new era of possibilitie
   
 </div><br>
 
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Terms and conditions for use, reproduction and distribution are under the [MIT License](https://opensource.org/license/mit/).
+
 ## Getting Started
 
 Create a project using this example:
