@@ -94,7 +94,7 @@ const CreateCampaign = () => {
         <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-white">Start a Campaign</h1>
       </div>
 
-      <form className="w-full mt-[65px] flex flex-col gap-[30px]">
+      <form className="w-full mt-[65px] flex flex-col gap-[30px]" aria-label="Create Campaign Form">
 
         <div className="flex flex-wrap gap-[40px] w-full">
           <div style={{width: 33 + 'rem'}}>
@@ -106,10 +106,11 @@ const CreateCampaign = () => {
               value={form.name}
               handleChange={(e) => handleFormFieldChange('name', e)}
               style={`${error === '*Name is Required!' && 'border-red-600'}`}
+              ariaLabel="name"
             />
             {
                 error === '*Name is Required!' && (
-                  <small className='text-red-600 text-lg'>*Name is Required</small>
+                  <small className='text-red-600 text-lg' role="alert" id="name-error">*Name is Required</small>
                 ) 
               }
           </div>
@@ -123,11 +124,12 @@ const CreateCampaign = () => {
               value={form.title}
               handleChange={(e) => handleFormFieldChange('title', e)}
               style={`${error === '*Campaign Title is Required!' && 'border-red-600'}`}
+              ariaLabel="title"
             />
 
             {
                 error === '*Campaign Title is Required!' && (
-                  <small className='text-red-600 text-lg'>*Campaign Title is Required!</small>
+                  <small className='text-red-600 text-lg' role="alert" id="title-error">*Campaign Title is Required!</small>
                 ) 
               }
          </div>
@@ -141,11 +143,12 @@ const CreateCampaign = () => {
             value={form.description}
             handleChange={(e) => handleFormFieldChange('description', e)}
             style={`${error === '*Description is Required!' && 'border-red-600'}`}
+            ariaLabel="description"
           />
 
             {
                 error === '*Description is Required!' && (
-                  <small className='text-red-600 text-lg' style={{marginTop:'-30px'}}>*Description is Required!</small>
+                  <small className='text-red-600 text-lg' style={{marginTop:'-30px'}} role="alert" id="description-error">*Description is Required!</small>
                 ) 
               }
 
@@ -158,10 +161,11 @@ const CreateCampaign = () => {
             value={form.target}
             handleChange={(e) => handleFormFieldChange('target', e)}
             style={`${error === '*Goal is Required!' && 'border-red-600'}`}
+            ariaLabel="goal"
           />
            {
                 error === '*Goal is Required!' && (
-                  <small className='text-red-600 text-lg'>*Goal is Required!</small>
+                  <small className='text-red-600 text-lg' role="alert" id="goal-error">*Goal is Required!</small>
                 ) 
               }
           </div>
@@ -174,11 +178,12 @@ const CreateCampaign = () => {
             value={form.deadline}
             handleChange={(e) => handleFormFieldChange('deadline', e)}
             style={`${error === '*End Date is Required!' && 'border-red-600'}`}
+            ariaLabel="end-date"
           />
 
           {
                 error === '*End Date is Required!' && (
-                  <small className='text-red-600 text-lg'>*End Date is Required!</small>
+                  <small className='text-red-600 text-lg' role="alert" id="end-date-error">*End Date is Required!</small>
                 ) 
               }
           </div>
@@ -193,11 +198,12 @@ const CreateCampaign = () => {
             value={form.image}
             handleChange={(e) => handleFormFieldChange('image', e)}
             style={`${error === '*Image URL is Required!' && 'border-red-600'}`}
+            ariaLabel="image"
           />
 
           {
                 error === '*Image URL is Required!' && (
-                  <small className='text-red-600 text-lg'  style={{marginTop:'-30px'}}>*Image URL is Required!</small>
+                  <small className='text-red-600 text-lg' style={{marginTop:'-30px'}} role="alert" id="image-error">*Image URL is Required!</small>
                 ) 
               }
           <div className="flex justify-center items-center mt-[40px]">
