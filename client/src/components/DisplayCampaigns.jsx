@@ -41,12 +41,18 @@ const DisplayCampaigns = ({ title, isLoading, campaigns ,searchText}) => {
 
         {!isLoading &&
           campaigns.length > 0 &&
-          campaigns.filter((campaign) => campaign.title?.toLowerCase().includes(searchText?.toLowerCase())).map((campaign, index) => (
+         searchText ? campaigns.filter((campaign) => campaign.title?.toLowerCase().includes(searchText?.toLowerCase())).map((campaign, index) => (
             <FundCard
               key={index}
               {...campaign}
               handleClick={() => handleNavigate(campaign)}
             />
+          )) : campaigns.map((campaign , index) => (
+            <FundCard
+            key={index}
+            {...campaign}
+            handleClick={() => handleNavigate(campaign)}
+          />
           ))}
       </div>
     </div>
