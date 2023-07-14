@@ -7,6 +7,7 @@ import { Sidebar, Navbar, Loader } from "../components";
 const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [campaigns, setCampaigns] = useState([]);
+  const [searchText, setSearchText] = useState()
 
   const { address, contract, getCampaigns } = useStateContext();
 
@@ -28,12 +29,13 @@ const Home = () => {
       </div>
 
       <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
-        <Navbar />
+        <Navbar searchText={searchText} setSearchText={setSearchText} />
 
         <DisplayCampaigns
           title="All Campaigns"
           isLoading={isLoading}
           campaigns={campaigns}
+          searchText={searchText}
         />
       </div>
     </>
