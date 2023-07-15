@@ -33,6 +33,7 @@ const DisplayCampaigns = ({ title, isLoading, campaigns ,searchText}) => {
           </p>
         )}
 
+<div className="flex flex-wrap gap-6 justify-center mt-4">
         {!isLoading && campaigns.length > 0 && searchText
           ? campaigns
               .filter((campaign) =>
@@ -48,12 +49,15 @@ const DisplayCampaigns = ({ title, isLoading, campaigns ,searchText}) => {
                 />
               ))
           : campaigns.map((campaign, index) => (
-              <FundCard
+             
+               <FundCard
                 key={index}
                 {...campaign}
                 handleClick={() => handleNavigate(campaign)}
               />
+            
             ))}
+        </div>
       </div>
     </div>
   );
