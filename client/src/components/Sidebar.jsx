@@ -43,7 +43,7 @@ const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => {
             } hover:filter-none`}
           />
         )}
-        {isHovered && <span className="absolute bg-[#2c2f32] text-white p-2 rounded text-sm">{name}</span>}
+        {isHovered && <span className="absolute bg-[#2c2f32] text-white p-2 rounded text-sm left-[90%] ">{name}</span>}
       </div>
     </a>
   );
