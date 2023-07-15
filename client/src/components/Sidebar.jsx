@@ -33,12 +33,13 @@ const Icon = ({ styles, name, imgUrl, isActive, disabled, handleClick }) => {
         onMouseLeave={handleMouseLeave}
       >
         {!isActive ? (
-          <img loading="lazy" src={imgUrl} alt="" aria-label={name} className="w-1/2 h-1/2" />
+          <img loading="lazy" src={imgUrl} alt="" aria-label={name} title={name} className="w-1/2 h-1/2" />
         ) : (
           <img loading="lazy"
             src={imgUrl}
             alt=""
             aria-label={name}
+            title={name}
             className={`w-1/2 h-1/2 ${
               isActive !== name ? 'grayscale' : ''
             } hover:filter-none`}
