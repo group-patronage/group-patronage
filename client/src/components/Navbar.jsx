@@ -44,7 +44,7 @@ const Navbar = ({searchText , setSearchText}) => {
         <input type="text" placeholder="Search for campaigns" className="flex w-full font-epilogue font-normal text-[14px] placeholder:text-[#4b5264] text-white bg-transparent outline-none" value={searchText} onChange={handleSearch}/>
 
         <div className="w-[72px] h-full rounded-[20px] bg-[#4acd8d] flex justify-center items-center cursor-pointer">
-          <img loading="lazy" src={search} alt="search" className="w-[15px] h-[15px] object-contain" />
+          <img loading="lazy" src={search} alt="" className="w-[15px] h-[15px] object-contain" aria-label="Search for campaigns" />
         </div>
       </div>
 
@@ -119,15 +119,15 @@ const Navbar = ({searchText , setSearchText}) => {
           anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
           <MenuItem onClick={handleClose}>
-            <AccountCircleIcon color="disabled" sx={{ fontSize: 35 }} className='mr-1 font-epilogue text-[#808191]' /> {user?.name}
+            <AccountCircleIcon color="disabled" sx={{ fontSize: 35 }} className='mr-1 font-epilogue text-[#808191]' aria-label="User Name" /> {user?.name}
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <MailIcon color="disabled" sx={{ fontSize: 35 }} className='mr-1 font-epilogue' /> {user?.email}
+            <MailIcon color="disabled" sx={{ fontSize: 35 }} className='mr-1 font-epilogue' aria-label="User E-mail" /> {user?.email}
           </MenuItem>
           <Divider />
           <MenuItem onClick={logout}>
             <ListItemIcon>
-              <Logout fontSize="small" />
+              <Logout fontSize="small" aria-label="Click to Log-out from Group Patronage Platform" />
             </ListItemIcon>
             Logout
           </MenuItem>
