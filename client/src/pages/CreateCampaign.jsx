@@ -90,8 +90,8 @@ const CreateCampaign = () => {
     <div className="flex w-[300px] max-sm:w-full sm:w-[470px] md:w-[610px] lg:w-[1260px] bg-[#1c1c24] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
       {isLoading && <Loader />}
       
-      <div className="flex justify-center items-center p-[12px] sm:min-w-[380px] shadow-gray-400 shadow-md rounded-[6px]">
-        <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-white">Start a Campaign</h1>
+      <div >
+        <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-[#4acd8d]">Start a Campaign</h1>
       </div>
 
       <form className="w-full mt-[65px] flex flex-col gap-[30px]" aria-label="Create Campaign Form">
