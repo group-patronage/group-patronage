@@ -29,7 +29,18 @@ const Navbar = ({searchText , setSearchText}) => {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  console.log(user);
+ 
+  const generateUniqueId = (sub) => {
+    const lastNumbers = sub.slice(-5); // Take the last 5 characters of the user.sub property
+    const uniqueId = `${lastNumbers}-${Math.floor(Math.random() * 10000)}`; // Append a random number to ensure uniqueness
+    return uniqueId;
+  };
+
+
+if (user && user.sub) {
+    console.log(`User is authenticated with ID: ${generateUniqueId(user.sub)}`);
+  }
+  
   const handleClose = () => {
     setAnchorEl(null);
   };
