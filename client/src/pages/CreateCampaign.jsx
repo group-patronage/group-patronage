@@ -85,9 +85,9 @@ const CreateCampaign = () => {
       </div>
 
       <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
-        <Navbar />
+        <Navbar placeholder="Search for Campaigns" />
 
-    <div className="flex w-[300px] max-sm:w-full sm:w-[470px] md:w-[610px] lg:w-[1260px] bg-[#1c1c24] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
+    <div className="flex w-[300px] max-sm:w-full sm:w-[470px] md:w-[610px] lg:w-[1260px] bg-[#1c1c24]  justify-center items-center flex-col rounded-[10px] sm:p-10 p-4">
       {isLoading && <Loader />}
       
       <div >

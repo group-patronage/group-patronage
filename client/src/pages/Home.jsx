@@ -29,7 +29,7 @@ const Home = () => {
       </div>
 
       <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
-        <Navbar searchText={searchText} setSearchText={setSearchText} />
+        <Navbar searchText={searchText} setSearchText={setSearchText} placeholder="Search for Campaigns" />
 
         <DisplayCampaigns
           title="All Campaigns"
