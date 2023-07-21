@@ -52,7 +52,7 @@ const LandingPage = () => {
       {/* Content */}
       <div className="min-h-screen lgl:mx-auto mt-40 lgl:mt-2 md:ml-auto flex flex-col lgl:flex-row lgl:px-4 md:px-12 md:flex-row lgl:ml-20 justify-between items-center">
         <div className="w-full lgl:max-w-2xl px-6 lgl:ml-10 lgl:pt-2  md:text-left">
-          <h2 className="text-white text-3xl md:text-5xl mb-6 font-bold px-8 lgl:pt-5">
+          <h1 className="text-white text-3xl md:text-5xl mb-6 font-bold px-8 lgl:pt-5">
             <span className="text-white">{text} </span>
             <Cursor
                     cursorBlinking="false"
@@ -61,7 +61,7 @@ const LandingPage = () => {
                     
                 />
             <span className="text-[#4acd8d]">Here's a Solution</span>
-          </h2>
+          </h1>
           <p className="text-white font-sans text-2xl px-8">
             Group Patronage aims to provide a decentralized crowdfunding
             platform that addresses the common challenges faced by small-scale
