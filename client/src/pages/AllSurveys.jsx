@@ -20,7 +20,7 @@ const Profile = () => {
           surveys={""}
         />
       </div>
-      <div className='fixed right-16 top-[90vh]'>
+      <div className='fixed right-4 top-[90vh]  sm:right-16 '>
         <CustomButton
           btnType="button"
           title={'Create a new Survey'}
