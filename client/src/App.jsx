@@ -12,6 +12,7 @@ import {
 import StartingLoader from "./components/startingLoader";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProtectedRoute from "./components/ProtectedRoute";
+import CreateSurveys from "./pages/CreateSurveys";
 
 const App = () => {
   const { isLoading } = useAuth0();
@@ -67,6 +68,18 @@ const App = () => {
               exact
               path="/create-campaign"
               element={<CreateCampaign />}
+            />
+          </Route>
+
+          <Route
+            exact
+            path="/allsurveys/create-surveys"
+            element={<ProtectedRoute />}
+          >
+            <Route
+              exact
+              path="/allsurveys/create-surveys"
+              element={<CreateSurveys/>}
             />
           </Route>
 
