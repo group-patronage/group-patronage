@@ -21,16 +21,15 @@ const Profile = () => {
           surveys={""}
         />
       </div>
+
       <div className="fixed right-16 top-[90vh]">
         <Link to="create-surveys">
           {" "}
           <CustomButton
-            btnType="button"
-            title={"Create a new Survey"}
-            styles={
-              "bg-[#8c6dfd] hover:bg-[#313549] hover:transition-all duration-700 hover:shadow-gray-400 shadow-md"
-            }
-          />
+          btnType="button"
+          title={'Create a new Survey'}
+          styles={'bg-[#8c6dfd]  hover:bg-transparent hover:text-[#8c6dfd] hover:border-solid hover:border-2 hover:border-[#8c6dfd] '}
+        />
         </Link>
       </div>
     </>

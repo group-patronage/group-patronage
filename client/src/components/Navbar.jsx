@@ -50,7 +50,7 @@ if (user && user.sub) {
   }
 
   return (
-    <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6">
+    <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6 ">
       
       <div className="lg:flex-1 flex flex-row max-w-[458px] py-2 pl-4 pr-2 h-[52px] bg-[#1c1c24] rounded-[100px]">
         <input type="text" placeholder={placeholder} className="flex w-full font-epilogue font-normal text-[14px] placeholder:text-[#4b5264] text-white bg-transparent outline-none" value={searchText} onChange={handleSearch}/>
@@ -60,11 +60,11 @@ if (user && user.sub) {
         </div>
       </div>
 
-      <div className="sm:flex hidden flex-row justify-end gap-4">
+      <div className="sm:flex hidden flex-row justify-end gap-4 items-center">
         <CustomButton
           btnType="button"
           title={address ? 'Create a campaign' : 'Connect'}
-          styles={address ? 'bg-[#1dc071] hover:bg-[#313549] hover:transition-all duration-700 hover:shadow-gray-400 shadow-md' : 'bg-[#8c6dfd] hover:bg-[#313549] hover:transition-all duration-700 hover:shadow-gray-400 shadow-md'}
+          styles={address ? 'bg-[#1dc071] hover:bg-transparent hover:text-[#1dc071] hover:border-solid hover:border-2 hover:border-[#1dc071]': 'bg-[#8c6dfd] hover:bg-transparent hover:text-[#8c6dfd] hover:border-solid hover:border-2 hover:border-[#8c6dfd]'}
           handleClick={() => {
             if (address) navigate('/create-campaign')
             else connect()
