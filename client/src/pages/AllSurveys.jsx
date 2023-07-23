@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
-import { DisplaySurveys, Sidebar, Navbar, CustomButton } from '../components';
+import { DisplaySurveys, Sidebar, Navbar, CustomButton } from "../components";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const [isLoading, setIsLoading] = useState(false);
-  
+
   return (
-     <>
+    <>
       <div className=" mr-10 hidden sm:block md:block lg:block xl:block">
         <Sidebar />
       </div>
@@ -20,15 +21,21 @@ const Profile = () => {
           surveys={""}
         />
       </div>
-      <div className='fixed right-4 top-[90vh]  sm:right-16 '>
-        <CustomButton
+
+
+     <div className='fixed right-4 top-[90vh]  sm:right-16 '>
+        <Link to="create-surveys">
+          {" "}
+          <CustomButton
+
           btnType="button"
           title={'Create a new Survey'}
-          styles={'bg-[#8c6dfd] hover:bg-[#313549] hover:transition-all duration-700 hover:shadow-gray-400 shadow-md'}
+          styles={'bg-[#8c6dfd]  hover:bg-transparent hover:text-[#8c6dfd] hover:border-solid hover:border-2 hover:border-[#8c6dfd] '}
         />
+        </Link>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;
