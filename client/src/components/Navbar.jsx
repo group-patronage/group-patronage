@@ -153,7 +153,7 @@ if (user && user.sub) {
       {/* Small screen navigation */}
       <div className="sm:hidden flex justify-between items-center relative">
         <div className="w-[50px] h-[50px]  flex justify-center items-center cursor-pointer">
-          <img loading="lazy" src={homeIcon} alt="user" className="w-[60%] h-[60%] object-contain" />
+          <img loading="lazy" src={homeIcon} alt="user" className="w-[60%] h-[60%] invert object-contain" />
         </div>
 
         <img loading="lazy"
