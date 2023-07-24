@@ -69,7 +69,7 @@ const Sidebar = () => {
   return (
     <div className="flex  justify-between items-center flex-col sticky top-5 h-[55vh]">
       <Link to="/home">
-        <Icon styles="w-[70px] h-[70px]" imgUrl={homeIcon} />
+        <Icon styles="w-[70px] h-[70px] invert" imgUrl={homeIcon} />
       </Link>
 
       <div className="flex-1 flex flex-col justify-between items-center bg-[#1c1c24] rounded-[20px] w-[76px] py-4 mt-12">
