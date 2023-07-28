@@ -1,6 +1,14 @@
 {
   "name": "hardhat-project",
+  "scripts": {
+    "prepare": "husky install"
+  },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "hardhat": "^2.15.0",
+    "husky": "^8.0.3"
+  }
     "hardhat": "^2.15.0"
   },
   "version": "0.1.0"
