@@ -54,16 +54,16 @@ Embrace the future of fundraising with us as we unlock a new era of possibilitie
 ## Technology Used
 <br>
 <div align="center">
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-    <img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" />
-    <img src="https://img.shields.io/badge/Solidity-F80000?style=for-the-badge&logo=Solidity&logoColor=white" /><br>
-    <img src="https://img.shields.io/badge/Auth0-36a9ae?style=for-the-badge&logo=Auth0&logoColor=white" />
-    <img src="https://img.shields.io/badge/Metamask-509EE3?style=for-the-badge&logo=Metamask&logoColor=fff" />
-    <img src="https://img.shields.io/badge/Web%203-414141?style=for-the-badge&logo=Web3.js&logoColor=white" />
-    <img src="https://img.shields.io/badge/Contract-F4B728?style=for-the-badge&logo=contract&logoColor=000" />
+   <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /></a>
+   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" /></a>
+   <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /></a>
+   <a href="https://v2.tailwindcss.com/docs"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" /></a>
+    <a href="https://ethereum.org/en/developers/docs/"><img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=Ethereum&logoColor=white" /></a>
+    <a href="https://docs.soliditylang.org/en/v0.8.21/"><img src="https://img.shields.io/badge/Solidity-F80000?style=for-the-badge&logo=Solidity&logoColor=white" /></a><br>
+    <a href="https://auth0.com/docs"><img src="https://img.shields.io/badge/Auth0-36a9ae?style=for-the-badge&logo=Auth0&logoColor=white" /></a>
+    <a href="https://docs.metamask.io/"><img src="https://img.shields.io/badge/Metamask-509EE3?style=for-the-badge&logo=Metamask&logoColor=fff" /></a>
+    <a href="https://web3js.readthedocs.io/en/v1.10.0/"><img src="https://img.shields.io/badge/Web%203-414141?style=for-the-badge&logo=Web3.js&logoColor=white" /></a>
+    <a href="https://docs.soliditylang.org/en/latest/contracts.html"><img src="https://img.shields.io/badge/Contract-F4B728?style=for-the-badge&logo=contract&logoColor=000" /></a>
   
 </div><br>
 
