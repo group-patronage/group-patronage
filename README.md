@@ -72,6 +72,21 @@ Embrace the future of fundraising with us as we unlock a new era of possibilitie
 
 Terms and conditions for use, reproduction and distribution are under the [MIT License](https://opensource.org/license/mit/).
 
+## Connect with the mentor
+If you want to connect with the maintainer of the project, you can reach me out through my social handels
+
+<div>
+<a href="https://github.com/LakshaySK106" target="_blank"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+
+<a href="https://www.linkedin.com/in/lakshaysk106/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+
+<a href="https://twitter.com/lakshay123401" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
+
+<a href="https://www.instagram.com/laksh.ay_/" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+
+<a href="https://discord.com/users/Lakshay%E2%97%A5%E2%96%B6_%E2%97%80%E2%97%A4#4372" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" />
+</div>
+
 ## Getting Started
 
 Create a project using this example:
@@ -174,5 +189,9 @@ We would like to thank the following contributors for their valuable contributio
 </a>
 
 
+
+
 ## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 By contributing, you agree that your contributions will be licensed under its [MIT License.](https://choosealicense.com/licenses/mit/)
