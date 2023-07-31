@@ -58,7 +58,7 @@ const CampaignDetails = () => {
       </div>
 
       <div className="flex-1 max-sm:w-full max-w-[1280px] mx-auto sm:pr-5">
-        <Navbar />
+        <Navbar placeholder="Search for Campaigns" />
       <div className="w-full flex md:flex-row flex-col mt-10 gap-[30px]">
         <div className="flex-1 flex-col">
           <img loading="lazy" src={state.image} alt="campaign" className="w-full h-[410px] object-cover rounded-xl"/>
