@@ -13,11 +13,16 @@ const DisplayCampaigns = ({ title, isLoading, campaigns, searchText }) => {
   };
 
   const fetchSearch = () => {
-    setSearchedCampaigns(
-      campaigns.filter((campaign) =>
-        campaign.title?.toLowerCase().includes(searchText?.toLowerCase())
-      )
-    );
+    if (searchText) {
+      const filteredCampaigns = campaigns.filter(
+        (campaign) =>
+          campaign.title?.toLowerCase().includes(searchText?.toLowerCase())
+      );
+      setSearchedCampaigns(filteredCampaigns);
+    } else {
+      // Reset searchedCampaigns to an empty array if searchText is empty
+      setSearchedCampaigns([]);
+    }
   };
 
   useEffect(() => {
@@ -40,13 +45,13 @@ const DisplayCampaigns = ({ title, isLoading, campaigns, searchText }) => {
           />
         )}
 
-        {!isLoading && campaigns.length === 0 && (
+        {!isLoading && campaigns.length === 0  && (
           <p className="font-epilogue font-semibold text-[14px] leading-[30px] text-[#818183] absolute top-[50%] left-[10%] sm:left-[40%] translate-[-50%,-50%]  ">
             You have not created any campigns yet
           </p>
         )}
 
-        {!isLoading && searchedCampaigns?.length === 0 && (
+        {!isLoading && searchedCampaigns?.length === 0 && searchText  &&(
           <p className="font-epilogue font-semibold text-[14px] leading-[30px] text-[#818183] absolute top-[50%] left-[23%] sm:left-[40%] translate-[-50%,-50%]  ">
             Not Found Any Campaigns !!
           </p>
